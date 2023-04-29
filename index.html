@@ -167,6 +167,24 @@
         // localStorage.setItem("userDetails",JSON.stringify(obj))
         // showUserOnScreen(obj)
       }
+
+      // Get the saved User Details from crudcrud
+      window.addEventListener("DOMContentLoaded", () => {
+        axios
+          .get(
+            "https://crudcrud.com/api/5d2ae201480d486eac7c30eb4fb99149/Appointmentdata"
+          )
+          .then((response) => {
+            console.log(response);
+            for (var i = 0; i < response.data.length; i++) {
+              showUserOnScreen(response.data[i]);
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      });
+
       // Task 12 showing user data on screen
       // function showUserOnScreen(obj){
       //   const parentElem=document.getElementById('listofitems')
