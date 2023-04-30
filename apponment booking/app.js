@@ -64,7 +64,6 @@ function showUserOnScreen(obj) {
       .delete(
         `https://crudcrud.com/api/5d2ae201480d486eac7c30eb4fb99149/Appointmentdata/${obj._id}`
       )
-
       .then((res) => {
         console.log(res);
       })
